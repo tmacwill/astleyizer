@@ -1,6 +1,2 @@
 build/*
 dist/*
-nbproject/*
-src/astleyizer/*.class
-build.xml
-manifest.mf
