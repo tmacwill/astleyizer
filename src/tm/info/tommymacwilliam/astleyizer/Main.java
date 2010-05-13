@@ -1,12 +1,9 @@
-package astleyizer;
+package tm.info.tommymacwilliam.astleyizer;
 
 import javax.swing.UIManager;
 
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -14,8 +11,10 @@ public class Main {
         catch (Exception e) {
             e.printStackTrace();
         }
-        MainWindow window = new MainWindow();
-        window.setVisible(true);
+        finally {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.setVisible(true);
+        }
     }
 
 }
