@@ -182,15 +182,12 @@ public class MainWindow extends javax.swing.JFrame {
             File readDir = new File(this.txtSelectDir.getText());
             // get array of all files in directory
             File[] files = readDir.listFiles();
+            Astleyizer astleyizer = new Astleyizer(this.txtAstleyFile.getText());
             // Astleyize all files in directory
             for(int i = 0; i < files.length; i++) {
                 // only alter music files to avoid ID3 error
                 if((files[i].getName().contains(".mp3")) || (files[i].getName().contains(".m4a"))) {
-                    Astleyizer astleyizer = new Astleyizer(this.txtAstleyFile.getText());
-                    astleyizer.astleyizeFile(files[i], this.txtSelectDir.getText());
-                }
-                else {
-                    continue;
+                    astleyizer.astleyizeFile(files[i], this.txtSelectDir.getText() + File.separator + "lol");
                 }
             }
         }
